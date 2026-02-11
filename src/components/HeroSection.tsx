@@ -59,6 +59,9 @@ const HeroSection = () => {
           className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
         >
           <span className="text-gradient-gold">Neusa Maria</span>
+          <span className="block text-xl md:text-2xl lg:text-3xl font-body font-light text-muted-foreground mt-4 tracking-wide">
+            Próteses Capilares em Ribeirão Preto
+          </span>
         </motion.h1>
 
         <motion.p

@@ -29,20 +29,20 @@ const ContactSection = () => {
             {
               icon: Phone,
               title: "Telefone",
-              info: "(11) 99999-9999",
-              link: "tel:+5511999999999",
+              info: "(16) 3911-5085",
+              link: "tel:+551639115085",
             },
             {
               icon: Instagram,
               title: "Instagram",
-              info: "@neusamariaproteses",
-              link: "https://instagram.com/neusamariaproteses",
+              info: "@neusamariaprotesecapilar",
+              link: "https://www.instagram.com/neusamariaprotesecapilar/",
             },
             {
               icon: MapPin,
               title: "Endereço",
-              info: "São Paulo, SP",
-              link: "#",
+              info: "R. Garibaldi, 1804 - Boulevard, Ribeirão Preto - SP",
+              link: "https://www.google.com/maps/search/?api=1&query=R.+Garibaldi+1804+Boulevard+Ribeir%C3%A3o+Preto+SP",
             },
             {
               icon: Clock,
@@ -80,7 +80,7 @@ const ContactSection = () => {
           className="text-center mt-16"
         >
           <a
-            href="https://wa.me/5511999999999?text=Olá! Gostaria de agendar uma consulta."
+            href="https://wa.me/5516992772241?text=Olá! Gostaria de agendar uma consulta."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-gradient-gold text-primary-foreground font-body font-semibold px-10 py-4 tracking-wider uppercase text-sm rounded-sm hover:opacity-90 transition-opacity duration-300"
