@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { number: "15+", label: "Anos de experiência" },
+  { number: "25+", label: "Anos de experiência" },
   { number: "3000+", label: "Clientes atendidos" },
   { number: "100%", label: "Satisfação garantida" },
 ];
@@ -25,7 +25,7 @@ const AboutSection = () => {
               Sobre Neusa Maria
             </h2>
             <p className="font-body text-muted-foreground leading-relaxed mb-6 text-lg">
-              Há mais de 15 anos, Neusa Maria dedica sua vida a transformar a autoestima de pessoas
+              Há mais de 25 anos, Neusa Maria dedica sua vida a transformar a autoestima de pessoas
               através de próteses capilares de altíssima qualidade. Cada peça é cuidadosamente
               selecionada e aplicada com técnicas exclusivas.
             </p>
@@ -74,7 +74,7 @@ const AboutSection = () => {
                   Próteses Capilares
                 </p>
                 <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mt-2">
-                  Desde 2009
+                  Desde 2001
                 </p>
               </div>
             </div>
