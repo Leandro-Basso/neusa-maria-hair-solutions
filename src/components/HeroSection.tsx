@@ -1,7 +1,18 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import heroImage from "@/assets/hero-salon.jpg";
 
+const navLinks = [
+  { href: "#servicos", label: "Serviços" },
+  { href: "#sobre", label: "Sobre" },
+  { href: "#depoimentos", label: "Depoimentos" },
+  { href: "#contato", label: "Contato" },
+];
+
 const HeroSection = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -27,18 +38,80 @@ const HeroSection = () => {
             NEUSA MARIA
           </span>
         </motion.div>
+
+        {/* Desktop nav */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           className="hidden md:flex items-center gap-8 font-body text-sm tracking-widest uppercase text-foreground/70"
         >
-          <a href="#servicos" className="hover:text-primary transition-colors duration-300">Serviços</a>
-          <a href="#sobre" className="hover:text-primary transition-colors duration-300">Sobre</a>
-          <a href="#depoimentos" className="hover:text-primary transition-colors duration-300">Depoimentos</a>
-          <a href="#contato" className="hover:text-primary transition-colors duration-300">Contato</a>
+          {navLinks.map((link) => (
+            <a key={link.href} href={link.href} className="hover:text-primary transition-colors duration-300">
+              {link.label}
+            </a>
+          ))}
         </motion.div>
+
+        {/* Mobile hamburger button */}
+        <motion.button
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden text-foreground/70 hover:text-primary transition-colors duration-300"
+          aria-label="Abrir menu"
+        >
+          {menuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+        </motion.button>
       </nav>
+
+      {/* Mobile menu overlay */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-30 bg-background/95 backdrop-blur-sm flex flex-col items-center justify-center gap-8"
+          >
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="absolute top-6 right-6 text-foreground/70 hover:text-primary transition-colors duration-300"
+              aria-label="Fechar menu"
+            >
+              <X className="w-7 h-7" />
+            </button>
+
+            {navLinks.map((link, index) => (
+              <motion.a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="font-body text-2xl tracking-widest uppercase text-foreground/70 hover:text-primary transition-colors duration-300"
+              >
+                {link.label}
+              </motion.a>
+            ))}
+
+            <motion.a
+              href="https://wa.me/5516992772241?text=Olá! Gostaria de agendar uma consulta."
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="mt-4 bg-gradient-gold text-primary-foreground font-body font-semibold px-8 py-4 tracking-wider uppercase text-sm rounded-sm"
+            >
+              Agendar via WhatsApp
+            </motion.a>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Hero Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">

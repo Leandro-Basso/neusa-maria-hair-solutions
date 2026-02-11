@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import fotoApresentacao from "@/assets/foto-apresentacao.png";
 
 const stats = [
   { number: "25+", label: "Anos de experiência" },
@@ -56,7 +57,7 @@ const AboutSection = () => {
             </div>
           </motion.div>
 
-          {/* Decorative Element */}
+          {/* Foto da profissional */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -64,19 +65,12 @@ const AboutSection = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="aspect-square rounded-sm bg-card border border-gold p-12 flex items-center justify-center shadow-gold">
-              <div className="text-center">
-                <span className="font-display text-6xl md:text-8xl font-bold text-gradient-gold block mb-4">
-                  NM
-                </span>
-                <div className="w-16 h-px bg-gradient-gold mx-auto mb-4" />
-                <p className="font-body text-sm tracking-[0.3em] uppercase text-muted-foreground">
-                  Próteses Capilares
-                </p>
-                <p className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mt-2">
-                  Desde 2001
-                </p>
-              </div>
+            <div className="aspect-square rounded-sm overflow-hidden border border-gold shadow-gold">
+              <img
+                src={fotoApresentacao}
+                alt="Neusa Maria - Especialista em Próteses Capilares"
+                className="w-full h-full object-cover"
+              />
             </div>
           </motion.div>
         </div>

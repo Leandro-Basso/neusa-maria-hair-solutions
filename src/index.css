@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -52,7 +52,7 @@
     --charcoal: 30 10% 6%;
     --charcoal-light: 30 8% 14%;
 
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Source Sans 3', sans-serif;
   }
 
   .dark {
@@ -71,7 +71,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Libre Baskerville', serif;
   }
 }
 
