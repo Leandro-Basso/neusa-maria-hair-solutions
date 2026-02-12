@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import fotoApresentacao from "@/assets/foto-apresentacao.png";
+import fotoApresentacao from "@/assets/foto-apresentacao.webp";
 
 const stats = [
   { number: "25+", label: "Anos de experiência" },
@@ -70,6 +70,9 @@ const AboutSection = () => {
                 src={fotoApresentacao}
                 alt="Neusa Maria - Especialista em Próteses Capilares"
                 className="w-full h-full object-cover"
+                width={800}
+                height={800}
+                loading="lazy"
               />
             </div>
           </motion.div>

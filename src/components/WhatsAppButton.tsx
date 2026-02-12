@@ -6,27 +6,6 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
-const HairPiece = () => (
-  <svg
-    viewBox="0 0 64 32"
-    className="absolute -top-3 left-1/2 -translate-x-1/2 w-14 h-7 pointer-events-none"
-  >
-    <path
-      d="M8 28 C8 12, 16 4, 32 4 C48 4, 56 12, 56 28 C52 20, 44 16, 32 16 C20 16, 12 20, 8 28Z"
-      fill="#8B4513"
-    />
-    <path
-      d="M10 26 C10 14, 18 6, 32 6 C46 6, 54 14, 54 26 C50 19, 43 16, 32 16 C21 16, 14 19, 10 26Z"
-      fill="#A0522D"
-    />
-    <path
-      d="M14 24 C16 16, 22 10, 32 10 C42 10, 48 16, 50 24 C46 19, 40 17, 32 17 C24 17, 18 19, 14 24Z"
-      fill="#6B3410"
-      opacity="0.4"
-    />
-  </svg>
-);
-
 const WhatsAppButton = () => {
   return (
     <motion.a
@@ -41,7 +20,6 @@ const WhatsAppButton = () => {
       whileTap={{ scale: 0.9 }}
       className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 rounded-full bg-[#25D366] text-white shadow-[0_4px_16px_rgba(37,211,102,0.4)] hover:shadow-[0_6px_24px_rgba(37,211,102,0.6)] transition-shadow duration-300"
     >
-      <HairPiece />
       <WhatsAppIcon />
     </motion.a>
   );

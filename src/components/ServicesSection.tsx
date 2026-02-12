@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import service1 from "@/assets/service-1.jpg";
-import service2 from "@/assets/service-2.jpg";
-import service3 from "@/assets/service-3.jpg";
+import service1 from "@/assets/service-1.webp";
+import service2 from "@/assets/service-2.webp";
+import service3 from "@/assets/service-3.webp";
 
 const services = [
   {

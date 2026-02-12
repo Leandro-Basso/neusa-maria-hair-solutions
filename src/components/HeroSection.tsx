@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import heroImage from "@/assets/hero-salon.jpg";
+import heroImage from "@/assets/hero-salon.webp";
 
 const navLinks = [
   { href: "#servicos", label: "Serviços" },
@@ -22,6 +22,9 @@ const HeroSection = () => {
           alt="Salão Neusa Maria Próteses Capilares"
           className="w-full h-full object-cover"
           loading="eager"
+          width={1920}
+          height={1080}
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-background/70" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
