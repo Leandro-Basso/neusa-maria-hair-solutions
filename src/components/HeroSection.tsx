@@ -7,7 +7,7 @@ const navLinks = [
   { href: "#servicos", label: "Serviços" },
   { href: "#sobre", label: "Sobre" },
   { href: "#depoimentos", label: "Depoimentos" },
-  { href: "#contato", label: "Contato" },
+  { href: "#contato", label: "Contato 2" },
 ];
 
 const HeroSection = () => {
@@ -50,7 +50,11 @@ const HeroSection = () => {
           className="hidden md:flex items-center gap-8 font-body text-sm tracking-widest uppercase text-foreground/70"
         >
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="hover:text-primary transition-colors duration-300">
+            <a
+              key={link.href}
+              href={link.href}
+              className="hover:text-primary transition-colors duration-300"
+            >
               {link.label}
             </a>
           ))}
