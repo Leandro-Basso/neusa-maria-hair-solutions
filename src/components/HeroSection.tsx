@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import heroImage from "@/assets/hero-salon.webp";
+import logo from "@/assets/logo/logo-neusa-maria-protese-capilar.png";
 
 const navLinks = [
   { href: "#servicos", label: "Serviços" },
@@ -37,9 +38,12 @@ const HeroSection = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-gradient-gold font-display text-xl md:text-2xl font-semibold tracking-wider">
-            NEUSA MARIA
-          </span>
+          <img
+            src={logo}
+            alt="Neusa Maria Próteses Capilares"
+            className="h-24 md:h-32 w-auto mix-blend-mode-multiply"
+            style={{ mixBlendMode: "multiply" }}
+          />
         </motion.div>
 
         {/* Desktop nav */}
