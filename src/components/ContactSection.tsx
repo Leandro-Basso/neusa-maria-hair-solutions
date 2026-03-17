@@ -60,7 +60,7 @@ const ContactSection = () => {
             <p className="font-body text-muted-foreground text-sm">R. Adolfo Serra, 315 - Alto da Boa Vista, Ribeirão Preto - SP, 14025-520</p>
           </div>
           <a
-            href="https://m.uber.com/ul/?action=setPickup&dropoff[latitude]=-21.2103&dropoff[longitude]=-47.8124&dropoff[nickname]=Neusa+Maria+Pr%C3%B3teses+Capilares&dropoff[formatted_address]=R.+Adolfo+Serra%2C+315+-+Alto+da+Boa+Vista%2C+Ribeir%C3%A3o+Preto+-+SP"
+            href="https://m.uber.com/ul/?action=setPickup&dropoff[nickname]=Neusa+Maria+Pr%C3%B3teses+Capilares&dropoff[formatted_address]=R.+Adolfo+Serra%2C+315+-+Alto+da+Boa+Vista%2C+Ribeir%C3%A3o+Preto+-+SP%2C+14025-520"
             target="_blank"
             rel="noopener noreferrer"
             onClick={e => e.stopPropagation()}
