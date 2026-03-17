@@ -16,7 +16,7 @@ const ContactSection = () => {
             Fale Conosco
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-bold text-gradient-gold mb-6">
-            Agende sua Consulta
+            Agende sua Avaliação
           </h2>
           <p className="font-body text-muted-foreground text-lg max-w-2xl mx-auto">
             Entre em contato e agende uma avaliação gratuita. Estamos prontas para
@@ -24,25 +24,68 @@ const ContactSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Google Maps */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-8 rounded-sm overflow-hidden border border-gold"
+        >
+          <iframe
+            title="Localização Neusa Maria Próteses Capilares"
+            src="https://www.google.com/maps?q=R.+Adolfo+Serra,+315,+Alto+da+Boa+Vista,+Ribeir%C3%A3o+Preto,+SP&output=embed"
+            width="100%"
+            height="360"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="block"
+          />
+        </motion.div>
+
+        {/* Card Endereço */}
+        <motion.a
+          href="https://www.google.com/maps/search/?api=1&query=R.+Adolfo+Serra+315+Alto+da+Boa+Vista+Ribeir%C3%A3o+Preto+SP"
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mb-8 flex items-center gap-4 bg-card border border-gold rounded-sm p-6 hover:shadow-gold transition-shadow duration-500 group"
+        >
+          <MapPin className="w-8 h-8 text-primary flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
+          <div className="flex-1">
+            <h3 className="font-display text-lg font-semibold text-foreground mb-1">Endereço</h3>
+            <p className="font-body text-muted-foreground text-sm">R. Adolfo Serra, 315 - Alto da Boa Vista, Ribeirão Preto - SP, 14025-520</p>
+          </div>
+          <a
+            href="https://m.uber.com/ul/?action=setPickup&dropoff[latitude]=-21.2103&dropoff[longitude]=-47.8124&dropoff[nickname]=Neusa+Maria+Pr%C3%B3teses+Capilares&dropoff[formatted_address]=R.+Adolfo+Serra%2C+315+-+Alto+da+Boa+Vista%2C+Ribeir%C3%A3o+Preto+-+SP"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={e => e.stopPropagation()}
+            className="flex-shrink-0 flex items-center gap-2 bg-black text-white font-body text-xs font-semibold px-4 py-2 rounded-full hover:bg-gray-800 transition-colors duration-300"
+          >
+            <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 19.5c-4.142 0-7.5-3.358-7.5-7.5S7.858 4.5 12 4.5s7.5 3.358 7.5 7.5-3.358 7.5-7.5 7.5z"/>
+            </svg>
+            Pedir Uber
+          </a>
+        </motion.a>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
               icon: Phone,
-              title: "Telefone",
-              info: "(16) 3911-5085",
-              link: "tel:+551639115085",
+              title: "Celular",
+              info: "(16) 99277-2241",
+              link: "tel:+5516992772241",
             },
             {
               icon: Instagram,
               title: "Instagram",
               info: "@neusamariaprotesecapilar",
               link: "https://www.instagram.com/neusamariaprotesecapilar/",
-            },
-            {
-              icon: MapPin,
-              title: "Endereço",
-              info: "R. Garibaldi, 1804 - Boulevard, Ribeirão Preto - SP",
-              link: "https://www.google.com/maps/search/?api=1&query=R.+Garibaldi+1804+Boulevard+Ribeir%C3%A3o+Preto+SP",
             },
             {
               icon: Clock,
@@ -77,10 +120,10 @@ const ContactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-16"
+          className="text-center mt-12"
         >
           <a
-            href="https://wa.me/5516992772241?text=Olá! Gostaria de agendar uma consulta."
+            href="https://wa.me/5516992772241?text=Olá! Gostaria de agendar uma avaliação ou obter mais informações sobre próteses capilares."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-gradient-gold text-primary-foreground font-body font-semibold px-10 py-4 tracking-wider uppercase text-sm rounded-sm hover:opacity-90 transition-opacity duration-300"

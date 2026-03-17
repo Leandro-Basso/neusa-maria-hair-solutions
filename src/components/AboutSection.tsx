@@ -1,11 +1,42 @@
-import { motion } from "framer-motion";
-import fotoApresentacao from "@/assets/foto-apresentacao.webp";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import fotoApresentacao from "@/assets/neusa-maria-especialista-aplicacao-protese-capilar-ribeirao-preto.webp";
 
 const stats = [
-  { number: "25+", label: "Anos de experiência" },
-  { number: "3000+", label: "Clientes atendidos" },
-  { number: "100%", label: "Satisfação garantida" },
+  { target: 25, prefix: "+", suffix: "", label: "Anos de experiência" },
+  { target: 3000, prefix: "+", suffix: "", label: "Clientes satisfeitos" },
+  { target: 100, prefix: "", suffix: "%", label: "Satisfação garantida" },
 ];
+
+const AnimatedNumber = ({ target, prefix, suffix }: { target: number; prefix: string; suffix: string }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (!inView) return;
+    const duration = 1800;
+    const steps = 60;
+    const increment = target / steps;
+    let current = 0;
+    const interval = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        setCount(target);
+        clearInterval(interval);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, duration / steps);
+    return () => clearInterval(interval);
+  }, [inView, target]);
+
+  return (
+    <span ref={ref} className="font-display text-3xl md:text-4xl font-bold text-primary">
+      {prefix}{count}{suffix}
+    </span>
+  );
+};
 
 const AboutSection = () => {
   return (
@@ -46,9 +77,7 @@ const AboutSection = () => {
                   transition={{ duration: 0.6, delay: index * 0.15 }}
                   className="text-center lg:text-left"
                 >
-                  <p className="font-display text-3xl md:text-4xl font-bold text-primary">
-                    {stat.number}
-                  </p>
+                  <AnimatedNumber target={stat.target} prefix={stat.prefix} suffix={stat.suffix} />
                   <p className="font-body text-sm text-muted-foreground mt-1">
                     {stat.label}
                   </p>
@@ -65,7 +94,7 @@ const AboutSection = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="aspect-square rounded-sm overflow-hidden border border-gold shadow-gold">
+            <div className="aspect-square rounded-sm overflow-hidden">
               <img
                 src={fotoApresentacao}
                 alt="Neusa Maria - Especialista em Próteses Capilares"

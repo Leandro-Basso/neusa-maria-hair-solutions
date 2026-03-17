@@ -1,21 +1,28 @@
+import { lazy, Suspense } from "react";
 import HeroSection from "@/components/HeroSection";
-import ServicesSection from "@/components/ServicesSection";
-import AboutSection from "@/components/AboutSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+
+// Seções abaixo do fold carregam sob demanda
+const ServicesSection = lazy(() => import("@/components/ServicesSection"));
+const AboutSection = lazy(() => import("@/components/AboutSection"));
+const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
+const FAQSection = lazy(() => import("@/components/FAQSection"));
+const ContactSection = lazy(() => import("@/components/ContactSection"));
+const Footer = lazy(() => import("@/components/Footer"));
+const WhatsAppButton = lazy(() => import("@/components/WhatsAppButton"));
 
 const Index = () => {
   return (
     <main className="bg-background">
       <HeroSection />
-      <ServicesSection />
-      <AboutSection />
-      <TestimonialsSection />
-      <ContactSection />
-      <Footer />
-      <WhatsAppButton />
+      <Suspense fallback={null}>
+        <ServicesSection />
+        <AboutSection />
+        <TestimonialsSection />
+        <FAQSection />
+        <ContactSection />
+        <Footer />
+        <WhatsAppButton />
+      </Suspense>
     </main>
   );
 };

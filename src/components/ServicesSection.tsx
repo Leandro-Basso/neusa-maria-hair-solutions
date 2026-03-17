@@ -74,7 +74,7 @@ const ServicesSection = () => {
                     mirror={service.mirror}
                   />
                 ) : (
-                  <div className="relative overflow-hidden rounded-sm aspect-[3/4]">
+                  <div className="relative overflow-hidden rounded-sm aspect-[9/5]">
                     <img
                       src={service.image}
                       alt={service.title}

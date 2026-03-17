@@ -9,7 +9,7 @@ const WhatsAppIcon = () => (
 const WhatsAppButton = () => {
   return (
     <motion.a
-      href="https://wa.me/5516992772241?text=Olá! Gostaria de agendar uma consulta."
+      href="https://wa.me/5516992772241?text=Olá! Gostaria de agendar uma avaliação ou obter mais informações sobre próteses capilares."
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Fale conosco pelo WhatsApp"
